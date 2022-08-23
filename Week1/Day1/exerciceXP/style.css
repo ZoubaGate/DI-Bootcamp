@@ -1,0 +1,27 @@
+body{
+    margin: 0 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.media{
+    margin-left: 20%;
+}
+.chat{
+    height: auto;
+    width: 50%;
+    
+}
+.lion{
+    height: auto;
+    width: 50%;
+    margin: 10px 0 0 20%;
+    border: solid 5px rgb(168, 16, 16) 
+}
+.red{
+    border: solid 1px red;
+    border-bottom:solid 3px red;
+    padding: 5px;
+}
+th, td{
+    border: solid 1px black;
+    padding: 2px;
+}
