@@ -1,0 +1,116 @@
+@import url(https://fonts.google.com/share?selection.family=Kumbh%20Sans:wght@400;700);
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Kumbh Sans', sans-serif;
+    
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+
+    background-image: url(images/globe.jpg);
+    background-repeat: no-repeat;
+    background-position: cover;
+}
+h1{
+    color: white;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+p{
+    color: white;
+}
+.container{
+    margin: 0 auto;
+    text-align: center;
+}
+.header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.header .num{
+    font-size: 50px;
+    font-weight: 700;
+    color: rgb(28, 146, 248);
+}
+.header .desc{
+    font-size: 10px;
+    font-weight: 100;
+}
+
+
+.wrapper{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper .wrap{
+    background-color: white;
+    box-shadow: 0px 0px 25px hsl(227, 10%, 46%),
+                0px 0px 10px hsl(227, 10%, 46%);
+    max-width: 420px;
+    border-radius: 15px;
+    height: 300px;
+    overflow: hidden;
+    margin: 1rem;
+}
+.wrapper .wrap > p{
+    color: black;
+    margin: 10px;
+    position: relative;
+    top: 40px;
+    font-size: 15px;
+}
+.wrapper .content{
+    position: relative;
+    top: 80px;
+    background-color: brown;
+    height: 45%;
+}
+.wrapper .content img{
+    position: relative;
+    bottom: 35px;
+    height: 75px;
+    width: 75px;
+    border-radius: 50px;
+    border: 3px solid white;
+}
+.wrapper .content h2{
+    position: relative;
+    bottom: 35px;
+    color: hsl(0, 0%, 0%);
+    font-size: 25px;
+    font-weight: 700;
+   
+
+
+}
+.wrapper .content p{
+    position: relative;
+    bottom: 25px;
+    font-size: 16px;
+    
+}
+
+@media (max-width: 768px) {
+    .wrapper{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .header{
+        flex-direction: column;
+        
+    }
+    .header > div{
+        margin: 20px;
+    }
+
+}

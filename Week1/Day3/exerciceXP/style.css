@@ -1,0 +1,84 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+
+}
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #ccc;
+    margin: 30px 50px;
+    line-height: 1.4;
+    
+}
+ul{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+    text-decoration: none;
+    color: black;
+    margin-top: 40px;
+    
+}
+
+img{
+    max-width: 100%;
+    margin: 20px;
+
+}
+
+.container{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 30% 70%;
+    
+   
+}
+
+.header{
+    padding-top: 100px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background-color: blanchedalmond;
+}
+.header .image{
+    width: 80%;
+    height: auto;
+    border-radius: 50%;
+    
+}
+
+.main{
+    background-color: aqua;
+    display: grid;
+    gap: 20px;
+    grid-template-rows: repeat(5,1fr);
+
+}
+.item{
+    margin: 20px;
+}
+
+.profile{
+
+
+}
+.education{
+
+}
+.competence{
+    
+}
+
+.experience{
+
+}
+.details{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 20px;
+}
+.langue{
+    font-size: x-large;
+}
