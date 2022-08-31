@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Exercice 1 : Instruction If/Else Simple
+        let x = 5;
+        let y = 2;
+        if(x > y){
+
+            console.log(x+" is the biggest number");
+        }
+        else{
+            console.log(y+" is the biggest number");
+
+        }
+
+        // Exercice 2 : Chihuahua
+        let newDog = "Chihuahua";
+
+        //affichez le nombre de lettres dans newDog
+        console.log(newDog.length);
+
+        //variable en majuscule puis en minuscule 
+        console.log(newDog.toUpperCase());
+        console.log(newDog.toLowerCase());
+
+
+        // Vérifiez si la variable newDogest égale à "Chihuahua"
+        if(newDog=="Chihuahua"){
+            console.log("J'adore les chihuahuas, c'est ma race de chien préférée");
+        }
+        else{
+            console.log("Je m'en fous, je préfère les chats");
+        }
+        
+
+        // Exercice 3 : Pair Ou Impair
+
+        // Invitez l'utilisateur à entrer un nombre et enregistrez-le dans une variable.
+        x = prompt("entrer une valeur: ");
+        if(x % 2){
+            console.log(x+" est un nombre pair");
+        }
+        else{
+            console.log(x+" est un nombre impair");
+        }
+
+
+        // Exercice 4 : Discussion De Groupe
+
+        let users = ["Lea123", "Princess45", "cat&doglovers", "helooo@000","moussa"];
+        console.log(users);
+        switch(users.length){
+            case 0:
+            console.log("personne n'est en ligne");
+            case 1:
+             console.log(users+" est en ligne");
+            case 2:
+              console.log(users[0]+" et "+users[1]+" sont en ligne");
+            default:
+                console.log(users[0] + ", " + users[1] + " et " + (users.length-2) +" autres personnes sont en lignes");
+        }
+
+    </script>    
+</body>
+</html>
