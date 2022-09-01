@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Exercice XP</h1>
+    <h2>Exercice 2</h2>
+    <script>
+         // Exercice 2 : Vos Couleurs Préférées
+         console.log("exercice 2");
+            //1- Créez un tableau appelé colorsoù la valeur est une liste de vos cinq couleurs préférées.
+                    let colors = ["rouge","jaune","vert","bleu","blanc"];
+                    let suffixe = ["st","nd","rd","th","th"];
+                    
+            //2- Bouclez à travers le tableau"Mon choix n°1 est bleu", "Mon choix n°2 est rouge" ect… .
+                    for (i in colors){
+                        console.log("Mon choix n°"+i+" est"+colors[i]);
+                    }
+                // Bonus : changez-le en console.log "Mon 1er choix", "Mon 2ème choix", "Mon 3ème choix", en choisissant le suffixe correct pour chaque numéro.
+                    for (i=1;i<colors.length;i++){
+                                    console.log(`Mon ${i}${suffixe[i]} choix ${colors[i]}`);
+                        }  
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Exercice XP</h1>
+    <h2>Exercice 1</h2>
+
+    <script>
+        // Exercise 1 : List Of People
+
+
+            let people = ["Greg", "Mary", "Devon", "James"];
+
+            // Part I - Review About Arrays
+
+                // 1-Écrivez du code pour supprimer "Greg" du peopletableau.
+                    people.shift();
+                    // 2- Écrivez le code pour remplacer "James" par "Jason".
+                    people.splice((people.length-1),1,"Jason");
+                    // 3- Écrivez du code pour ajouter votre nom à la fin du tableau people.
+                    people.push("sidibe");
+                    console.log(people);
+                // 4- Écrivez le code qui console.logs l'index de Mary. jetez un oeil à la indexOf .
+                    console.log("l'index de Mary est "+ people.indexOf("Mary",0));
+                //5- Écrivez du code pour faire une copie du peopletableau à l'aide de la sliceméthode.
+                    console.log(people.slice(1,(people.length-1)));
+                // Écrivez le code qui donne l'index de "Foo"
+                    console.log(people.indexOf("foo",0));
+                    // le code renvoi -1 parce que "foo" n,est pas dans le tableau
+                //Créez une variable appelée last dont la valeur est le dernier élément du tableau.
+                    last = people.slice(people.length-1);
+                    console.log("le dernier element du tableau people: "+last);
+                
+            // Partie II - Boucles
+
+                //1- À l'aide d'une boucle, parcourez le tableau people et console.log chaque personne.
+                    console.log();
+                    console.log("affichages des element du tableau: ");
+                    for(let i of people){
+                        console.log(i);
+                    }
+
+                //2- À l'aide d'une boucle, parcourez le tableau people et quittez la boucle après avoir console.log "Jason" .
+                    console.log("affichages des element du tableau et s'arreter a \"Jason\": ");
+                    for(let i of people){
+                            console.log(i);
+                            if(i=="Jason"){
+                                break;
+                            }
+                        }
+
+    </script>
+</body>
+</html>
