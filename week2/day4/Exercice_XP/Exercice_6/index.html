@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Exercice XP</h1>
+    <h2> Exercice 6 : Frais De Vacances</h2>
+    <script>
+        //Définissez une fonction appelée hotelCost()
+        function hotelCost(){
+            let nombreNuit=0;
+           // nombreNuit = prompt("combien de nuits souhaitiez vous séjourner à l'hôtel: ");
+            while(!Number(nombreNuit)){
+                nombreNuit = prompt("combien de nuits souhaitiez vous séjourner à l'hôtel: ");
+            }
+            return nombreNuit*140;
+            
+        }
+        hotelCost();
+        //Définissez une fonction appelée planeRideCost()
+         function planeRideCost(){
+            let destination = 0;
+            destination = prompt("quels est votre destination: ");
+            while(Number(destination)){
+                destination = prompt("quels est votre destination: ");
+            }
+            switch(destination){
+                case "Londres":
+                    return 183;
+                break;
+                case "Paris":
+                    return 220;
+                default:
+                    return 300;
+                break;
+            }
+        }
+        planeRideCost();
+        //Définissez une fonction appelée rentalCarCost().
+        function rentalCarCost(){
+            
+            let nbrLouer = 0;
+            nbrLouer = prompt("combien de jour souhaitiez vous louer la voiture: ");
+            
+
+            let coutLocation = 0;
+            if(Number(nbrLouer)>10){
+                coutLocation = (nbrLouer*40)-(nbrLouer*0.05);
+            }
+            else{
+                coutLocation =nbrLouer*40;
+            }
+            return coutLocation;
+        }
+        rentalCarCost();
+        //Définissez une fonction appelée totalVacationCost()
+        function totalVacationCost(){
+            console.log("La voiture Coute: "+rentalCarCost()+",l'Hotels coute: "+hotelCost()+",Les billets d'avion coutent: "+planeRideCost());
+        }
+        totalVacationCost();
+        
+    </script>
+</body>
+</html>

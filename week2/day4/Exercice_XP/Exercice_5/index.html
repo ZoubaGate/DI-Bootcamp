@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Exercice XP</h1>
+    <h2>Exercice 5 : Qu'y A-T-Il Dans Mon Portefeuille ?</h2>
+    <script>
+        function changeEnough(itemPrice, amountOfChange){
+            let montantPoche = 0;
+            // let montantPoche = amountOfChange[0]*0.25+amountOfChange[1]*0.1+amountOfChange[2]*0.05+amountOfChange[3]*0.01;
+            order = [0.25,0.1,0.05,0.01];
+            for(let i in order){
+                montantPoche=Number(montantPoche)+(Number(amountOfChange[i]*order[i]));
+            }
+            if(montantPoche>itemPrice){
+                return true;
+            }
+            if(montantPoche<itemPrice){
+                return false;
+            }
+        }
+       console.log(changeEnough(4.25, [25, 20, 5, 0])); // => returns true
+      console.log(changeEnough(14.11, [2,100,0,0])); // => returns false
+        console.log(changeEnough(0.75, [0,0,20,5])) // => returns true
+    </script>
+</body>
+</html>

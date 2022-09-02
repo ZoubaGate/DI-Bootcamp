@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Exercice XP</h1>
+    <h2>Exercice 4 : Liste De Courses</h2>
+    <script>
+        let stock = { 
+            "banana": 6, 
+            "apple": 0,
+            "pear": 12,
+            "orange": 32,
+            "blueberry":1
+        }  
+
+        let prices = {    
+            "banana": 4, 
+            "apple": 2, 
+            "pear": 1,
+            "orange": 1.5,
+            "blueberry":10
+        }
+        let shoppingList = ["banana","orange","apple"];
+
+        function myBill(){
+            let price=0;
+            for(let i of shoppingList){
+                if(i in stock){
+                    if(stock[i]>0){
+                        price=Number(price)+prices[i];
+                        stock[i]--;
+                    }    
+                }
+            }
+            console.log("Le montant totale d'achat est: "+price);
+            
+        }
+        myBill();
+
+    </script>
+</body>
+</html>

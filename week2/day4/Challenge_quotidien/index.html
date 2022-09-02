@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Défi Quotidien : Mots Dans Les Étoiles</h1>
+    <script>
+        let nbrNombre = 0;
+        let mots = [];
+        let etoile="*";
+        let space = " ";
+        nbrNombre = prompt("combien de mots voudriez vous saisir: ");
+        console.log(typeof(nbrNombre));
+        let i=0;
+        while(i < nbrNombre){
+            mots[i]=prompt();
+            i++;
+        }
+        //recherche du plus long mots
+       
+        let max=0;
+        for(let i of mots){
+            if(max < i.length){
+                max=i.length;
+            }
+        }
+        //affichage
+       
+        console.log("*"+etoile.repeat(max)+"***");    
+        let marge=0;    
+        for(let i of mots){
+            marge=max-i.length;
+            // console.log(marge;
+            console.log("* "+i+space.repeat(marge)+" *");
+        }
+        console.log("*"+etoile.repeat(max)+"**"); 
+        
+        
+    </script>
+</body>
+</html>
