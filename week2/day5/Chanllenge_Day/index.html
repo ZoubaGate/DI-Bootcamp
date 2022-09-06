@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Challenge Day</h1>
+    <h2>Defi Quotidien</h2>
+    <script>
+        let nombreBouteilles=Number(prompt("Combien de bouteilles voulez-vous: "));
+        let nbrSoustrait = 0;
+        console.log("we start the song at "+nombreBouteilles+" bottles");
+        let i=0;
+        var soustraire = 0;
+        while(nombreBouteilles>0){
+            soustraire+=1;
+            nombreBouteilles-=soustraire;
+            if(soustraire==1){
+                console.log("Take _1_ down, pass it around");
+                console.log("we have "+nombreBouteilles);
+            }else{
+                console.log("Take _"+soustraire+"_down, pass them around");
+                
+                if(nombreBouteilles<=0){
+                    console.log("we have now 0 bottles");
+                    break;
+                }
+                console.log("we have now "+nombreBouteilles+" bottles");
+            }
+            
+        }
+    </script>
+</body>
+</html>

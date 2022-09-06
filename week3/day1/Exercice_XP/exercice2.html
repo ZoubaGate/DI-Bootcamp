@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div>Users:
+        <ul>
+            <li>John</li>
+            <li>Pete</li>
+        </ul>
+    </div>
+    <script>
+        //2-Add a “light blue” background color and some padding to the <div>.
+            let div = document.querySelector("div");
+            div.style.backgroundColor="blue";
+            div.style.padding = "20px";
+        //3-Do not display the <li> that contains the text node “John”.
+            let elements = document.querySelector("ul").lastElementChild;
+            alert(elements.textContent);
+        //4- Ajoutez une bordure au <li>qui contient le nœud de texte "Pete".
+            elements.style.border="1px solid orange";
+        //5- Modifiez la taille de la police de tout le corps.
+            document.body.style.fontSize="20px";
+        //6- if the background color of the div is “light blue”, alert “Hello x and y” (x and y are the users in the div).
+            if(div.style.backgroundColor=="blue"){
+                let contenu = div.childNodes;
+                for(cent of contenu){
+                    alert(cent.textContent);
+                }
+            }
+    </script>
+</body>
+</html>

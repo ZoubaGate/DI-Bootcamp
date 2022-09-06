@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">Users:</div>
+    <ul class="list">
+        <li>John</li>
+        <li>Pete</li>
+    </ul>
+    <ul class="list">
+        <li>David</li>
+        <li>Sarah</li>
+        <li>Dan</li>
+    </ul>
+
+    <script>
+        // Retrieve the div and console.log it
+            mon_div = document.getElementById("div");
+            console.log(mon_div);
+        // Change the name “Pete” to “Richard”.
+            document.querySelector('ul> li:last-child').innerHTML="Richard";
+            // Change each first name of the two <ul>'s to your name.
+                let elements=document.getElementsByTagName("ul");
+
+                for (let elem of elements) {
+                    elem.firstElementChild.textContent="sidibe";
+                }
+        // Delete the <li> that contains the text node “Sarah”.
+            elements[1].children[1].remove();
+        //3-Bonus
+//Add a class called student_list to both of the <ul>'s.
+    for(let elem of elements){
+        elem.classList.add("student_list");
+    }
+// Add the classes university and attendance to the first <ul>.
+    elements[0].classList.add("university","attendance");
+    </script>
+</body>
+</html>

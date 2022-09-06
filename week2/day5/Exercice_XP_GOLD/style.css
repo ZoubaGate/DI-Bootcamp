@@ -1,0 +1,48 @@
+*{
+    box-sizing: border-box;
+
+}
+body{
+    display: flex;
+    flex-direction: column;
+    margin-top: 200px;
+    align-items: center;
+    
+}
+button{
+    color: white;
+    border: none;
+    font-size: 20px;
+}
+
+div{
+    margin-bottom: 5px;
+    width: 450px;
+    
+}
+input{
+    width: 92%;
+    height: 40px;
+    font-size: 20px;
+    font-weight: 300;
+}
+.vert, .sign{
+    width: 100px;
+    height: 40px;
+}
+.vert{
+    background-color: green;
+}
+.sign{
+    background-color: orange;
+}
+.reset{
+    background-color: red;
+    width: 205px;
+    height: 40px;
+}
+.clear{
+    background-color: blue;
+    width: 205px;
+    height: 40px;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*"Cette fonction récupère une lettre saisie par
+            l'utilisateur. Si la chaîne récupérée n'est pas une lettre,
+            on appelle récursivement la fonction jusqu'à obtenir une lettre*/
+        function recup_lettre(){
+            let  lettre = prompt("Tapez une lettre: ");
+            lettre = lettre.toLowerCase();
+            if(lettre.length>1 || !(lettre.match(/[a-z]/i))){
+                console.log("vous n\'aviez pas saisie une lettre valide.");
+                return recup_lettre();
+            }
+            else{
+                return lettre;
+            }
+        }
+        //Cette fonction renvoie un mot masqué tout ou en partie, en fonction
+        function recup_mot_masque(mot_complet,lettres_trouvees){
+            let mot_masque="";
+            for( let lettre of mot_complet){
+                if(lettres_trouvees.includes(lettre)){
+                    mot_masque+=lettre;
+                }
+                else{
+                    mot_masque+="*"
+                }
+            }
+            return mot_masque;
+        }
+        var joueur1 = '';
+        var joueur2 = '';
+        var lettres_trouvees = [];
+        var nb_chances=6;
+        var mot_trouve = '';
+        var motTanter = '';
+        
+
+        while(joueur1.length<8){
+            joueur1 = prompt("saisir un mot: ");
+        }
+        mot_trouve = recup_mot_masque(joueur1,lettres_trouvees);
+        while(joueur1!=mot_trouve && nb_chances>0){
+            alert(`Mot a trouver ${mot_trouve} (encore ${nb_chances} chances)`);
+            joueur2 = recup_lettre();
+            motTanter+=joueur2;
+
+            if(lettres_trouvees.indexOf(joueur2,0)>=0){
+                alert("Vous aviez deja choisie cette lettre.");
+            }
+            else if(joueur1.split('').indexOf(joueur2,0)>=0){
+                lettres_trouvees.push(joueur2);
+            }
+            else{
+                nb_chances-=1;
+                alert("...non,cette lettre ne se trouve pas dans le mot.....");
+            }
+            mot_trouve = recup_mot_masque(joueur1,lettres_trouvees);
+        }
+        if(joueur1==mot_trouve){
+            alert("Felicitations! Vous avez trouver le mot "+joueur1);
+            console.log(motTanter.split(' '));
+        }
+        else{
+            alert("vous aviez perdu la partie.");
+            console.log(motTanter.split(' '));
+        }
+    </script>
+</body>
+</html>

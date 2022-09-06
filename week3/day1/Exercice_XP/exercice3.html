@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="navBar">
+        <ul>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">My Friends</a></li>
+            <li><a href="#">Messenger</a></li>
+            <li><a href="#">My Pics</a></li>
+        </ul>
+    </div>
+    <script>
+        //2-change the value of the id attribute from navBar to socialNetworkNavigation
+        let div = document.getElementById("navBar");
+        div.setAttribute('id',"socialNetworkNavigation");
+       //3- We are going to add a new <li> to the <ul>.
+          let li=document.createElement('li');
+          let text = document.createTextNode("Lagout");
+          li.appendChild(text);
+          
+          //mon ul
+          let ul = document.querySelector('ul');
+          ul.appendChild(li);
+        //4-bonus
+        alert(ul.firstElementChild.textContent);
+        alert(ul.lastElementChild.textContent);
+    </script>
+</body>
+</html>
