@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="fo">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname"><br><br>
+        <input type="submit" value="Submit" id="submit">
+    </form>
+      <ul id="usersAnswer"></ul>
+      <span id="error"></span>
+
+
+      <!-- script JS-->
+      <script>
+        //1-Récupérez le formulaire et consolez-le.
+            let form = document.forms[0];
+            console.log(form);
+        //2- Récupérez les entrées par leur identifiant et console.log les.
+           
+            console.log(document.getElementById("fname"));
+            console.log(document.getElementById("lname"));
+        //3- Récupérez les entrées par leur name attribut et console.log les.
+            console.log(form.elements.fname);
+            console.log(form.elements.lname);
+        
+        //4-Lorsque l'utilisateur soumet le formulaire 
+            let validation = document.getElementById('submit');
+            
+            validation.addEventListener('click',f_valid);
+            function f_valid(e){
+                var error = document.getElementById("error");
+                let nom = document.forms[0].fname.value;
+                var prenom = document.getElementById("lname").value;
+                
+                
+               
+              if(nom == "" || prenom == ""){
+                    e.preventDefault();
+                    error.textContent = "nom ou prenom manquant";
+                    error.style.color ='red';
+                    return false;
+                }
+                else{
+                    e.preventDefault();
+                    let li1 = document.createElement("li");
+                    let li2 = document.createElement("li");
+                    let ul = document.getElementById("usersAnswer");
+                    li1.appendChild(document.createTextNode(nom));
+                    li2.appendChild(document.createTextNode(prenom));
+                    ul.appendChild(li1);
+                    ul.appendChild(li2);
+                }
+                
+            }
+      </script>
+</body>
+</html>

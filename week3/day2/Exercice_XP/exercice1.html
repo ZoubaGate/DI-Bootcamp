@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .fad-in-paragraphe{
+        animation: fadeIn 5s;
+    }
+    @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+</style>
+<body>
+    <article>
+        <h1> Some Facts </h1>
+        <h2> The Chocolate </h2>
+        <h3> History of the chocolate </h3>
+
+        <p> Chocolate is made from tropical Theobroma cacao tree seeds. 
+            Its earliest use dates back to the Olmec civilization in Mesoamerica.
+        </p>
+        <p> After the European discovery of the Americas, chocolate became 
+            very popular in the wider world, and its demand exploded.
+        </p>
+        <p> Chocolate has since become a popular food product that millions enjoy every day, 
+            thanks to its unique, rich, and sweet taste.
+        </p> 
+        <p> But what effect does eating chocolate have on our health?</p>
+        <button id="btn">button</button>
+    </article>
+
+    <script>
+        //1- récupérez le h1et console.log
+        let h1 = document.querySelector("h1");
+        console.log(h1.textContent);
+
+        //2-supprimez le dernier paragraphe de la <article>balise.
+        let p = document.querySelectorAll("p");
+        p[p.length-1].remove();
+        
+        //3-Ajoutez un écouteur d'événement qui changera la couleur d'arrière-plan du h2 en rouge
+
+        let h2 = document.querySelector("h2");
+        h2.addEventListener('click',funcH2);
+        function funcH2(){
+            h2.style.backgroundColor="orange";
+        }
+        
+        //4-Ajoutez un écouteur d'événement qui masquera le h3 lorsqu'il est cliqué
+            let h3 = document.querySelector("h3");
+            h3.addEventListener('click',funcH3);
+            function funcH3(){
+                h3.style.display="none";
+            }
+        
+        //5-Ajoutez un <button>au fichier HTML qui, une fois cliqué dessus, devrait mettre le texte de tous les paragraphes en gras.
+            let btn = document.getElementById("btn");
+            btn.addEventListener('click',gras);
+            function gras(){
+                let paragraphes = document.querySelectorAll("p");
+                for(let paragraphe of paragraphes){
+                    paragraphe.style.fontWeight = "bold";
+                }
+            }
+
+        //6-Lorsque vous survolez le h1, définissez la taille de la police sur une taille de pixel aléatoire comprise entre 0 et 100
+            h1.addEventListener('mouseover',survoler);
+            function survoler(){
+                let taille = (Math.floor(Math.random() * 100));
+                h1.style.fontSize = `${taille}px`;
+            }
+        
+        //7-lorsque vous survolez le 2e paragraphe, il devrait s'estomper
+            let para2 = document.querySelectorAll('p')[1];
+            para2.addEventListener('mouseover',fade);
+            function fade(){
+                para2.classList.add("fad-in-paragraphe");
+            }
+            
+    </script>
+</body>
+</html>

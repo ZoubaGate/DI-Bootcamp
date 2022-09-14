@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Challenge: Mad Libs</title>
+    </head>
+    <body>
+
+        <h1>Mad Libs</h1>
+
+        <form id="libform">
+            <label for="noun">Noun:</label><input type="text" id="noun"><br>
+            <label for="adjective">Adjective:</label><input type="text" id="adjective"><br>
+            <label for="person">Someone's Name:</label><input type="text" id="person"><br>
+            <label for="verb">Verb:</label><input type="text" id="verb"><br>
+            <label for="place">A place:</label><input type="text" id="place"><br>
+            <button id="lib-button">Lib it!</button>
+        </form>
+        <br>
+        
+        <p>Generated story:
+            <span id="story"></span>
+        </p>
+
+        <script>
+            let submit = document.getElementById("lib-button");
+            submit.addEventListener('click',valider);
+            function valider(event){
+                let nom = document.getElementById("noun").value;
+                let adjective = document.getElementById("adjective").value;
+                let person = document.getElementById("person").value;
+                let verb = document.getElementById("verb").value;
+                let place = document.getElementById("place").value;
+                let story = document.getElementById("story");
+                
+                event.preventDefault();
+                if(nom=="" || adjective=="" || person=="" || verb=="" || place==""){
+                    story.style.color = "red";
+                    story.style.fontSize = "20px";
+                    story.textContent = "Vous n'aviez pas saisie toute les valeurs.";
+                    
+                }
+                else{
+                    story.style.color = "green";
+                    story.style.fontSize = "20px";
+                    story.textContent = `Je m'appel ${nom}, mon objectif est ${adjective},
+                                         mon amie s'appel ${person}, je conjugue le verbe ${verb} a la place ${place}.`;
+                   
+                }
+            }
+        </script>
+
+    </body>
+</html>

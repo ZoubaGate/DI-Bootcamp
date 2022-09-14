@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <style>
+        #container {
+          width: 400px;
+          height: 400px;
+          position: relative;
+          background: yellow;
+        }
+        #animate {
+          width: 50px;
+          height: 50px;
+          position: absolute;
+          background-color: red;
+        }
+        </style>
+    </head>
+    <body>
+        <p><button onclick="myMove()">Click Me</button></p>
+        <div id="container">
+          <div id="animate"></div>
+        </div>
+
+        <script>
+            
+            
+            function myMove(){
+                var container = document.getElementById("container");
+                var animation = document.getElementById("animate");
+                var pos = 0;
+                let stop = setInterval(myFunction,10);
+                function myFunction(){
+                    if (pos == 350){
+                        stopper();
+                    }
+                    else{
+                        pos+=1;
+                        animation.style.left = pos+"px";
+                    }
+                }
+
+                function stopper(){
+                    clearInterval(stop);
+                }
+                
+            }
+        </script>
+    </body>
+    </html>

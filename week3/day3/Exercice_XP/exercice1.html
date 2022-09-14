@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <style>
+        p {
+          background: yellow;
+          color: red;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="container"></div>
+        <button id="clear">Clear Interval</button>
+        <script>
+            /*
+            // Part I
+           let stop =  setTimeout(mon_click,5000);
+            function mon_click(){
+                alert("Hello Word");
+            }
+            let button = document.getElementById("clear");
+            button.addEventListener("click",stopper);
+            function stopper(){
+                clearInterval(stop);
+            }
+           
+            //Part II
+            setTimeout(ajouter,2000);
+            function ajouter(){
+                let div = document.getElementById("container");
+                div.innerHTML="<p>Hello mon word JS</p>";
+            }
+            */
+            //Part III
+           
+            let stop=setInterval(appelRecurssif,2000);
+
+            var div = document.getElementById("container");
+            var nbr = 1;
+            function appelRecurssif(){
+                let p = document.createElement('p');
+                let text = document.createTextNode("Hello mon word JS");
+                p.appendChild(text);
+                div.appendChild(p);
+                if(nbr>=5){
+                    stopper();
+                }
+                else{
+                    nbr+=1;
+                }
+            }
+            let clear = document.getElementById("clear");
+            clear.addEventListener('click',stopper);
+            function stopper(){
+                clearInterval(stop);
+            }
+
+          
+        </script>
+    </body>
+    </html>
