@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{%block content%}
+    {% for x in animaux%}
+        <p>id : {{ x.id }}</p>
+        <p>name:  {{ x.name }}</p>
+        <p>legs: {{ x.legs }}</p>
+        <p>weight: {{ x.weight }}</p>
+        <p>height: {{ x.height }}</p>
+        <p>speed: {{ x.speed }}</p>
+        <p>family: {{ x.family }}</p>
+    {%endfor%}
+{%endblock content%}
