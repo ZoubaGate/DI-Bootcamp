@@ -1,0 +1,13 @@
+{% extends 'posts/homepage.html' %}
+    {% block title %}
+    {{ page_title|default:"Homepage" }}
+    {% endblock title %}
+
+    {% block content %}
+    {{ block.super }} 
+    <h4>Today we are going to talk about : </h4> 
+        {% for x in posts %} 
+        <h1>{{ x }}</h1>
+        {% endfor %}
+        
+{% endblock content %}

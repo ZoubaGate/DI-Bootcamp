@@ -1,21 +1,64 @@
 from django.shortcuts import render
-from .forms import GifForm
-# Create your views here.
+from .forms import GifModelForm,CategoryModelForm
+from .models import GifModel,Category
 
-def myGif(request):
-    context = {}
+
+from django.http import HttpResponseRedirect
+from django.urls import reverse_lazy
+from django.views.generic import TemplateView
+
+from django.views.generic import DetailView
+
+
+def homepage(request):
+    context={
+        'title': "homepage",
+        'gifs': GifModel.objects.all
+    }
+    return render(request,'gifs/homepage.html',context)
+
+
+class AddGif(TemplateView):
     
-    if request.method == 'POST':
-        form = GifForm(request.POST)
-        if form.is_valid():
-            #get the value from the fields
-            uploader_name = form['uploader_name']
-            title = form['title']
-            url = form['title']
-            Category = form['Category']
-            # render to a the same url, but with new data:
-            context['gifInfo'] = [uploader_name,title,url,Category]
-    else:
-        context['form'] = GifForm()   
+    form = GifModelForm
+    template_name = 'gifs/addNewGif.html'
 
-    return render(request,'gifs/addNewGif.html',context)
+    def post(self, request, *args, **kwargs):
+
+        form = GifModelForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            obj = form.save()
+           # return HttpResponseRedirect(reverse_lazy('gifs/homepage.html', kwargs={'pk': obj.id}))
+
+        context = self.get_context_data(form=form)
+        return self.render_to_response(context)    
+
+    def get(self, request, *args, **kwargs):
+        return self.post(request, *args, **kwargs)
+
+class AddCategory(TemplateView):
+    form = CategoryModelForm
+    template_name = 'gifs/addNewCategory.html'
+    def post(self, request, *args, **kwargs):
+    
+        form = CategoryModelForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            obj = form.save()
+           # return HttpResponseRedirect(reverse_lazy('gifs/homepage.html', kwargs={'pk': obj.id}))
+
+        context = self.get_context_data(form=form)
+        return self.render_to_response(context)    
+
+    def get(self, request, *args, **kwargs):
+        return self.post(request, *args, **kwargs)
+
+
+def categorys(request, id):
+    context = {
+        'id': id,
+        'page_title' : "Category",
+        'gifs': GifModel.objects.filter(id=id)
+    }
+    return render(request, 'gifs/category.html', context)

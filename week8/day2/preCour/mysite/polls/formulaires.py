@@ -1,5 +1,6 @@
+from datetime import datetime
 from django import forms
-
+from .models import Person
 def validate_name(name):
     if (name.isalpha() == False):
         print("Invalid name")
@@ -28,3 +29,16 @@ class ContactForm(forms.Form):
             'placeholder': 'write your comment'
         }
     ))
+
+
+
+class PersonForm(forms.ModelForm):
+    class Meta:
+        model = Person
+        fields = '__all__'
+
+class PostForm(forms.Form):
+    title = forms.CharField(max_length=100)
+    text = forms.CharField()
+    released_date = forms.DateField()
+    author = forms.ModelChoiceField(queryset=Person.objects.all())

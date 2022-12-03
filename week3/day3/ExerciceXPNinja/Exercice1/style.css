@@ -1,0 +1,27 @@
+#add-box{
+    float: left;
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+    border:none;
+    font-size: 50px;
+    color: white;
+    vertical-align:auto;
+    outline: 0;
+}
+
+.box{
+    float: left;
+    
+    top:-60px;
+    left:100px;
+    position: relative;
+    background-color: #00DECF;
+    width: 100px;
+    height: 100px;
+    animation: expand .5s ease-in-out;
+
+}
+body{
+    background: #5470B0;
+}

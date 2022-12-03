@@ -1,5 +1,9 @@
 from django.urls import path
-from .views import myGif
+from .views import AddGif,homepage,AddCategory,categorys
 urlpatterns = [
-    path('addNewGif/', myGif,name="home page")
+    path('homepage/',homepage,name="homepage"),
+    path('addNewGif/', AddGif.as_view(), name='addgif'),
+    path('addNewCategory/',AddCategory.as_view(),name='category'),
+    path('category/<int:id>/', categorys, name='categorys'),
+    
 ]

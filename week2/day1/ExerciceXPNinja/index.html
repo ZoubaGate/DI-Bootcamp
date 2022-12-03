@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- Exercice 1 : Évaluation -->
+
+        <!-- 5 >= 1 // vrai
+        0 === 1 //false
+        4 <= 1 //false
+        1 != 1 //false
+        "A" > "B" //false
+        "B" < "C" //True
+        "a" > "A" //True
+        "b" < "A" //false
+        true === false //false
+        true != true //false -->
+        <form action="">
+            <label for="">Saisir une phrase qui contient le mot Nemo</label>
+            <input id="str" type="text">
+            <input type="submit" value="Valider">
+            <h1 id="demo"></h1>
+        </form> 
+
+        <script>
+            // Exercice 2 : Demander Des Nombres
+            // chaineChiffre = prompt("entrer des chiffres separer par des virgules: ");
+            // tabChiffre = chaineChiffre.split(',');
+            // let s = 0;
+            // for(let i of tabChiffre){
+            //     s+=Number(i);
+            // }
+            // console.log(s);
+
+            //Exercice 3 : Trouver Nemo
+           
+            var myString = document.getElementById("str").innerText;
+            var myWord = "Nemo";
+            var myPattern = new RegExp('(\\w*'+myWord+'\\w*)','gi');
+
+            var matches = myString.match(myPattern);
+
+            if (matches === null)
+            {
+                document.getElementById("demo").innerHTML = "No results"; // Any message or empty
+               
+            }
+            else{
+
+                document.getElementById("demo").innerHTML = matches + " - "+ " result(s) found.";
+            }
+
+
+
+
+        </script>
+    </body>
+</html>
