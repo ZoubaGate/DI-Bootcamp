@@ -10,6 +10,7 @@ CREATE DATABASE dvdrental
     LC_CTYPE = 'C'
     TABLESPACE = pg_default
     CONNECTION LIMIT = -1
+    
     IS_TEMPLATE = False;
 	
 --How many stores there are, and in which city and country they are located.
