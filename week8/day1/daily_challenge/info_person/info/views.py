@@ -35,7 +35,7 @@ def listPeople(request):
     return render(request,'people.html',context)
 
 def only(request,id):
-    context={
+    context= {
         'people':people,
         'a':id,
     }

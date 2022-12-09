@@ -17,7 +17,7 @@ def phonenumber(request,number):
     return render(request,"phoneNumber.html",context)
 
 def name(request,nom):
-    context={
+    context = {
         'person':Person.objects.all(),
         'nom': nom,
     }
